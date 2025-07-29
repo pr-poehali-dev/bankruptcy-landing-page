@@ -24,10 +24,7 @@ const Index = () => {
               <a href="#reviews" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">Отзывы</a>
               <a href="#contacts" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">Контакты</a>
             </nav>
-            <Button className="bg-blue-700 hover:bg-blue-800">
-              <Icon name="Phone" size={16} className="mr-2" />
-              Консультация
-            </Button>
+            <Button className="bg-blue-700 hover:bg-blue-800">Бесплатная консультация</Button>
           </div>
         </div>
       </header>

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Index = () => {
   return (
@@ -35,6 +36,7 @@ const Index = () => {
       <section id="home" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection animation="fade-in-left">
             <div>
               <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">Профессиональная помощь</Badge>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -69,6 +71,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
+            </AnimatedSection>
+            <AnimatedSection animation="fade-in-right" delay={200}>
             <div className="lg:text-center">
               <img 
                 src="/img/2d229ba8-1e69-4142-8953-5ac4b5a7471a.jpg" 
@@ -76,6 +80,7 @@ const Index = () => {
                 className="rounded-lg shadow-2xl mx-auto max-w-md w-full"
               />
             </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -83,14 +88,14 @@ const Index = () => {
       {/* Procedure Section */}
       <section id="procedure" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Процедура банкротства
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Пошаговый процесс освобождения от долгов согласно законодательству РФ
             </p>
-          </div>
+          </AnimatedSection>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -131,7 +136,8 @@ const Index = () => {
                 icon: "CheckCircle"
               }
             ].map((item, index) => (
-              <Card key={index} className="relative overflow-hidden hover:shadow-lg transition-shadow">
+              <AnimatedSection key={index} animation="scale-in" delay={index * 100}>
+                <Card className="relative overflow-hidden hover:shadow-lg transition-shadow h-full">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-4xl font-bold text-blue-100">{item.step}</span>
@@ -143,6 +149,7 @@ const Index = () => {
                   <p className="text-gray-600">{item.description}</p>
                 </CardContent>
               </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -151,14 +158,14 @@ const Index = () => {
       {/* Benefits Section */}
       <section id="benefits" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Преимущества банкротства
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Законный способ решения финансовых проблем с защитой ваших прав
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[
@@ -183,7 +190,8 @@ const Index = () => {
                 icon: "Home"
               }
             ].map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-4">
+              <AnimatedSection key={index} animation="fade-in-up" delay={index * 100}>
+              <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Icon name={benefit.icon} size={24} className="text-blue-700" />
                 </div>
@@ -192,9 +200,11 @@ const Index = () => {
                   <p className="text-gray-600">{benefit.description}</p>
                 </div>
               </div>
+              </AnimatedSection>
             ))}
           </div>
 
+          <AnimatedSection animation="fade-in-up" delay={400}>
           <Card className="bg-blue-700 text-white">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -213,20 +223,21 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Отзывы клиентов
             </h2>
             <p className="text-xl text-gray-600">
               Реальные истории людей, которые решили свои финансовые проблемы
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -249,7 +260,8 @@ const Index = () => {
                 rating: 5
               }
             ].map((review, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <AnimatedSection key={index} animation="fade-in-left" delay={index * 100}>
+              <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(review.rating)].map((_, i) => (
@@ -268,6 +280,7 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -276,16 +289,17 @@ const Index = () => {
       {/* Documents Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Необходимые документы
             </h2>
             <p className="text-xl text-gray-600">
               Полный список документов для процедуры банкротства
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-8">
+            <AnimatedSection animation="scale-in" delay={0}>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -311,7 +325,9 @@ const Index = () => {
                 </ul>
               </CardContent>
             </Card>
+            </AnimatedSection>
 
+            <AnimatedSection animation="scale-in" delay={100}>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -337,6 +353,7 @@ const Index = () => {
                 </ul>
               </CardContent>
             </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -344,16 +361,17 @@ const Index = () => {
       {/* Contacts Section */}
       <section id="contacts" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Контакты
             </h2>
             <p className="text-xl text-gray-600">
               Свяжитесь с нами для получения бесплатной консультации
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid lg:grid-cols-2 gap-12">
+            <AnimatedSection animation="fade-in-up" delay={0}>
             <div>
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
@@ -390,7 +408,9 @@ const Index = () => {
                 </div>
               </div>
             </div>
+            </AnimatedSection>
 
+            <AnimatedSection animation="fade-in-up" delay={200}>
             <Card>
               <CardHeader>
                 <CardTitle>Бесплатная консультация</CardTitle>
@@ -428,6 +448,7 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>

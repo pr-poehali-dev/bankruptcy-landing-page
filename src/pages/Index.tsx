@@ -200,7 +200,7 @@ const Index = () => {
             <CardContent className="p-8">
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold mb-2">2000+</div>
+                  <div className="text-4xl font-bold mb-2">11000+</div>
                   <div className="text-blue-100">Успешных дел</div>
                 </div>
                 <div>

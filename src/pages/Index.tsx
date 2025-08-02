@@ -62,10 +62,7 @@ const Index = () => {
                   <Icon name="Clock" size={16} className="mr-1 text-blue-600" />
                   6-8 месяцев
                 </div>
-                <div className="flex items-center">
-                  <Icon name="Users" size={16} className="mr-1 text-purple-600" />
-                  2000+ клиентов
-                </div>
+                <div className="flex items-center">11000+ клиентов</div>
               </div>
             </div>
             </AnimatedSection>

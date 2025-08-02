@@ -208,7 +208,7 @@ const Index = () => {
                   <div className="text-blue-100">Положительных решений</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">12</div>
+                  <div className="text-4xl font-bold mb-2">16</div>
                   <div className="text-blue-100">Лет опыта</div>
                 </div>
               </div>
